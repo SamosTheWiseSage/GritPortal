@@ -1,0 +1,75 @@
+     *{
+            box-sizing: border-box;
+        }
+        .Omega {
+            text-decoration: none;
+            font-size: 188%;
+            font-weight:lighter;
+            color:gold;
+            background-color: black;
+          display: inline-block;
+          border: 3px solid black;
+          border-radius: 12px;
+
+       }
+       @media (max-width:700px) {
+        .Omega{
+          font-size: 20px;
+        }
+       }
+        .Omega:hover{
+          color: blue;
+        }
+        .Archonia{
+            justify-content: center;
+            display: flex;
+            gap: 30px;
+        }
+        .Archonia > nav{
+            padding: 50px;
+            width: auto;
+            margin-left: 5%;
+            margin-right: auto;
+            border: 50px;
+            border-radius: 50px;
+
+        }
+
+        .Axum{
+
+            font-size: x-large;
+            outline-color: white;
+            outline: solid 5px;
+            justify-content: center;
+            display: flex;
+            color: white;
+            border-block: solid 100px;
+            background-color: black;
+            width: auto;
+            border-block-end: 30px;
+            border-block-start: 30px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            border-color: black;
+        }
+        .Decimus {
+
+           font-size: x-large;
+           outline-color: white;
+           outline: solid 5px;
+           flex-direction: column;
+
+           color: white;
+           justify-content: center;
+           border-block: solid 100px;
+           background-color: black;
+         max-width: 800px;
+           width: 100%;
+           border-block-end: 30px;
+           border-block-start: 30px;
+           margin-top: 20px;
+           margin-left: auto;
+           margin-right: auto;
+           border-color: black;
+       }
