@@ -6,9 +6,9 @@
 <body>
 <%@ include file="fragments/navbar.jsp" %>
 
-<h>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h>
-<p>mentum integer enim neque volutpat. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Elementum eu facilisis sed odio morbi quis commodo odio aenean. Semper feugiat nibh sed pulvinar proin gravida. Id porta nibh venenatis cras sed felis eget velit aliquet. Et malesuada fames ac turpis egestas sed tempus urna. Ipsum a arcu cursus vitae congue mauris rhoncus aenean vel. Tortor condimentum lacinia quis vel eros. Viverra aliquet eget sit amet tellus. Aliquam ultrices sagittis orci a scelerisque purus se</p>
-<p>nunc faucibus a pellentesque. Commodo nulla facilisi nullam vehicula ipsum a arcu. Et pharetra pharetra massa massa ultricies mi. At ultrices mi tempus imperdiet nulla malesuada pellentesque elit. Ut eu sem integer vitae justo eget magna fermentum iaculis. Eget duis at tellus at. Magna fermentum iaculis eu non diam phasellus vestibulum lorem sed.</p>
+<h>welcome to Grit acadamy port or just GritPortal</h>
+<p>This is the homepage where you can navigate to the other parts of our website and preform the following </p>
+<p>See the student list, the list of courses and finally the list of assocation between teachers,students and courses</p>
 
 
 <%@ include file="fragments/footer.jsp" %>

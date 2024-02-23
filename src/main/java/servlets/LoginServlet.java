@@ -89,12 +89,12 @@ static String password;
                     "                                border-radius: 50px; \">LOGIN</a>" +
                     "        </nav>";
             out.println(top);
-            while (rs.next()){//courses on students.id = courses.id inner join
+          //courses on students.id = courses.id inner join
                 System.out.println(rs.getString(1));
                 userBean.setStateType(STATE_TYPE.Confirmed);
                 userBean.setUserType(USER_TYPE.students);
                 req.getSession().setAttribute("userBean",userBean);
-            }
+
                // req.getRequestDispatcher("JSP/userPage.jsp").forward(req,resp);
            // req.getRequestDispatcher("JSP/login.jsp").forward(req,resp);
              //  resp.getWriter().print((req.getSession().getAttribute("userBean")));
@@ -148,12 +148,12 @@ static String password;
                     "                                border-radius: 50px; \">LOGIN</a>" +
                     "        </nav>";
             out.println(top);
-           while (rs2.next()){//courses on students.id = courses.id inner join
+         //courses on students.id = courses.id inner join
 
                 userBean.setStateType(STATE_TYPE.Confirmed);
                 userBean.setUserType(USER_TYPE.Teachers);
                 req.getSession().setAttribute("userBean",userBean);
-            }  System.out.println("workrojeikndkjfbnkhjwrsbgjhsbg");
+           System.out.println("workrojeikndkjfbnkhjwrsbgjhsbg");
             resp.getWriter().print("LOGGED IN <br>");
             resp.getWriter().print("<td>"+username+"</td><td> "+password+"</td><td> "+userType + "</td>");
             //req.getRequestDispatcher("JSP/index.jsp").forward(req,resp);
