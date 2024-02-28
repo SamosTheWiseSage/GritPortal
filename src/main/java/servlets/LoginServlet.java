@@ -26,6 +26,7 @@ static String password;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //System.out.println();
+        req.getSession().invalidate();
         req.getSession().setAttribute("errorMessage","");
         req.getRequestDispatcher("JSP/login.jsp").forward(req,resp);
     }
@@ -156,6 +157,7 @@ static String password;
            System.out.println("workrojeikndkjfbnkhjwrsbgjhsbg");
             resp.getWriter().print("LOGGED IN <br>");
             resp.getWriter().print("<td>"+username+"</td><td> "+password+"</td><td> "+userType + "</td>");
+                resp.getWriter().print("<br> TO LOG OUT PLEASE PRESS LOGIN ONCE MORE");
             //req.getRequestDispatcher("JSP/index.jsp").forward(req,resp);
         } else if (rs2 != null &&!rs2.next() && userType.equals("Teachers")) {
             req.getSession().setAttribute("errorMessage","Student not found");

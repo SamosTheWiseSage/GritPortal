@@ -102,12 +102,15 @@ private void DisplayCourses (HttpServletRequest req, HttpServletResponse resp) t
                     "<table>";
             out.println(top);
         try {
-            ResultSet rs = stmt.executeQuery("select st.fname,courses.namn,courses.YHP,courses.beskrivning,tt.fname,tt.lname from students st inner join Students_Courses on st.id = Students_Courses.StudentID inner Join courses on courses.id = Students_Courses.kursID JOIN TeachersCourses tc ON Students_Courses.kursID=tc.coursesID inner join Teachers tt on tt.id = tc.teachersID where st.username='"+username+"' AND st.password='"+password+"'");
+            ResultSet rs = stmt.executeQuery("select st.fname,courses.namn,courses.YHP,courses.beskrivning,tt.fname,tt.lname from " +
+                    "students st inner join Students_Courses on st.id = Students_Courses.StudentID inner Join " +
+                    "courses on courses.id = Students_Courses.kursID JOIN TeachersCourses tc ON Students_Courses.kursID=tc.coursesID inner join " +
+                    "Teachers tt on tt.id = tc.teachersID where st.username='"+username+"' AND st.password='"+password+"'");
             while (rs.next()){//courses on students.id = courses.id inner join
                 //print to console column 1 and 2
                 String middle = "<tr style='border: 1px solid black; background-color: #96D4D4;'>" +
-                        "<td> id:" + rs.getString(1) + "</td><td> First name:" +rs.getString(2) + "</td><td> Last name:"+ rs.getString(3) +
-                        "</td><td> Kurs:"+rs.getString(4)+ "</td><td> Teachers:"+rs.getString(5)+"</td><td>"+rs.getString(6)+"</td></tr>";
+                        "<td> Student name:" + rs.getString(1) + "</td><td> Kurs name:" +rs.getString(2) + "</td><td> Kurs YHP:"+ rs.getString(3) +
+                        "</td><td> Kurs beskrivning:"+rs.getString(4)+ "</td><td> Teacher Name:"+rs.getString(5)+"</td><td> Teacher Last name:"+rs.getString(6)+"</td></tr>";
                 out.println(middle);
             }
         } catch (SQLException e) {
@@ -154,12 +157,15 @@ private void DisplayCourses (HttpServletRequest req, HttpServletResponse resp) t
                     "<table>";
             out.println(top);
             try {
-                ResultSet rs = stmt.executeQuery("select st.fname,courses.namn,courses.YHP,courses.beskrivning,tt.fname,tt.lname from students st inner join Students_Courses on st.id = Students_Courses.StudentID inner Join courses on courses.id = Students_Courses.kursID JOIN TeachersCourses tc ON Students_Courses.kursID=tc.coursesID inner join Teachers tt on tt.id = tc.teachersID where st.username='"+username+"' AND st.password='"+password+"'");
+                ResultSet rs = stmt.executeQuery("select st.fname,courses.namn,courses.YHP,courses.beskrivning,tt.fname,tt.lname from " +
+                        "students st inner join Students_Courses on st.id = Students_Courses.StudentID inner Join " +
+                        "courses on courses.id = Students_Courses.kursID JOIN TeachersCourses tc ON Students_Courses.kursID=tc.coursesID inner join" +
+                        " Teachers tt on tt.id = tc.teachersID where st.fname='"+username+"' AND st.lname='"+password+"'");
                 while (rs.next()){//courses on students.id = courses.id inner join
                     //print to console column 1 and 2
                     String middle = "<tr style='border: 1px solid black; background-color: #96D4D4;'>" +
-                            "<td> id:" + rs.getString(1) + "</td><td> First name:" +rs.getString(2) + "</td><td> Last name:"+ rs.getString(3) +
-                            "</td><td> Kurs:"+rs.getString(4)+ "</td><td> Teachers:"+rs.getString(5)+"</td><td>"+rs.getString(6)+"</td></tr>";
+                            "<td> Student name:" + rs.getString(1) + "</td><td> Kurs name:" +rs.getString(2) + "</td><td> Kurs YHP:"+ rs.getString(3) +
+                            "</td><td> Kurs beskrivning:"+rs.getString(4)+ "</td><td> Teacher Name:"+rs.getString(5)+"</td><td> Teacher Last name:"+rs.getString(6)+"</td></tr>";
                     out.println(middle);
                 }
             } catch (SQLException e) {
@@ -285,12 +291,15 @@ private void DisplayCourses (HttpServletRequest req, HttpServletResponse resp) t
                     "<table>";
             out.println(top);
             try {
-                ResultSet rs = stmt.executeQuery("select st.fname,courses.namn,courses.YHP,courses.beskrivning,tt.fname,tt.lname from students st inner join Students_Courses on st.id = Students_Courses.StudentID inner Join courses on courses.id = Students_Courses.kursID JOIN TeachersCourses tc ON Students_Courses.kursID=tc.coursesID inner join Teachers tt on tt.id = tc.teachersID where st.username='"+username+"' AND st.password='"+password+"'");
+                ResultSet rs = stmt.executeQuery("select st.fname,courses.namn,courses.YHP,courses.beskrivning,tt.fname,tt.lname " +
+                        "from students st inner join Students_Courses on st.id = Students_Courses.StudentID inner Join courses on " +
+                        "courses.id = Students_Courses.kursID JOIN TeachersCourses tc ON Students_Courses.kursID=tc.coursesID inner join " +
+                        "Teachers tt on tt.id = tc.teachersID where st.username='"+username+"' AND st.password='"+password+"'");
                 while (rs.next()){//courses on students.id = courses.id inner join
                     //print to console column 1 and 2
                     String middle = "<tr style='border: 1px solid black; background-color: #96D4D4;'>" +
-                            "<td> id:" + rs.getString(1) + "</td><td> First name:" +rs.getString(2) + "</td><td> Last name:"+ rs.getString(3) +
-                            "</td><td> Kurs:"+rs.getString(4)+ "</td><td> Teachers:"+rs.getString(5)+"</td><td>"+rs.getString(6)+"</td></tr>";
+                            "<td> Student name:" + rs.getString(1) + "</td><td> Kurs name:" +rs.getString(2) + "</td><td> Kurs YHP:"+ rs.getString(3) +
+                            "</td><td> Kurs beskrivning:"+rs.getString(4)+ "</td><td> Teacher Name:"+rs.getString(5)+"</td><td> Teacher Last name:"+rs.getString(6)+"</td></tr>";
                     out.println(middle);
                 }
             } catch (SQLException e) {
@@ -309,14 +318,14 @@ private void DisplayCourses (HttpServletRequest req, HttpServletResponse resp) t
                         + "<div style='border:black solid; width:200px; padding:5px display:block; margin-left:auto; margin-right:auto; margin-top:5px; margin-bottom:5px;'>"
                         + "<form style='margin:5px;' action=/userPage method=POST>"
                         + "            <label for=username>First Name:</label>"
-                        + "            <input type=text id=username name=username><br><br>"
+                        + "            <input type=text required=true id=username name=username><br><br>"
                         + "             <label for=password>Last Name:</label>"
-                        + "            <input type=text id=password name=password><br><br>"
+                        + "            <input type=text required=true id=password name=password><br><br>"
                         + "            <input type=submit value=Submit>"
                         + "        </form>"
                         + "</div>"
                         + "<br>"+ "<table>" +
-                        "<button style='display:block; margin-left:auto; margin-right:auto; margin-top:5px; margin-bottom:5px; padding:5px;' id=reset onclick=location.href='/courses'>RESET</button></div>\n"+
+                        "<button style='display:block; margin-left:auto; margin-right:auto; margin-top:5px; margin-bottom:5px; padding:5px;' id=reset onclick=location.href='/userPage'>RESET</button></div>\n"+
                         "</body>"
                         + "</html>"
         );
